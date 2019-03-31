@@ -1,0 +1,355 @@
+2019-03-29 16:42:24.072  INFO 19052 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 19052 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 16:42:24.077  INFO 19052 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 16:42:24.215  INFO 19052 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35083305: startup date [Fri Mar 29 16:42:24 CST 2019]; root of context hierarchy
+2019-03-29 16:42:26.291  INFO 19052 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 16:42:26.329  INFO 19052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 16:42:26.330  INFO 19052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 16:42:26.475  INFO 19052 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 16:42:26.476  INFO 19052 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2270 ms
+2019-03-29 16:42:26.723  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 16:42:26.725  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 16:42:26.729  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 16:42:26.730  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 16:42:26.731  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 16:42:26.731  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 16:42:26.732  INFO 19052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 16:42:26.834  INFO 19052 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 16:42:27.618  INFO 19052 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 16:42:28.283  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35083305: startup date [Fri Mar 29 16:42:24 CST 2019]; root of context hierarchy
+2019-03-29 16:42:28.535  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 16:42:28.537  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam)
+2019-03-29 16:42:28.539  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 16:42:28.543  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 16:42:28.545  INFO 19052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 16:42:28.579  INFO 19052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 16:42:28.580  INFO 19052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 16:42:28.620  INFO 19052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 16:42:28.868  INFO 19052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 16:42:28.870  INFO 19052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 16:42:28.870  INFO 19052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 16:42:28.875  INFO 19052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 16:42:28.878  INFO 19052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 16:42:28.917  INFO 19052 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 16:42:28.922  INFO 19052 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 5.614 seconds (JVM running for 7.665)
+2019-03-29 16:54:37.444  INFO 19052 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 16:54:37.449  INFO 19052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 16:54:37.486  INFO 19052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 37 ms
+2019-03-29 16:54:40.909  INFO 19052 --- [http-nio-8080-exec-3] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:04:38.148  INFO 16796 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 16796 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 17:04:38.154  INFO 16796 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 17:04:38.276  INFO 16796 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35083305: startup date [Fri Mar 29 17:04:38 CST 2019]; root of context hierarchy
+2019-03-29 17:04:40.295  INFO 16796 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 17:04:40.333  INFO 16796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 17:04:40.334  INFO 16796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 17:04:40.491  INFO 16796 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 17:04:40.491  INFO 16796 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2220 ms
+2019-03-29 17:04:40.733  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 17:04:40.735  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 17:04:40.741  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 17:04:40.742  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 17:04:40.744  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 17:04:40.744  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 17:04:40.745  INFO 16796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 17:04:40.837  INFO 16796 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 17:04:41.647  INFO 16796 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 17:04:42.286  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35083305: startup date [Fri Mar 29 17:04:38 CST 2019]; root of context hierarchy
+2019-03-29 17:04:42.564  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 17:04:42.566  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam)
+2019-03-29 17:04:42.567  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 17:04:42.569  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 17:04:42.571  INFO 16796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 17:04:42.610  INFO 16796 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:04:42.611  INFO 16796 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:04:42.659  INFO 16796 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:04:42.905  INFO 16796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 17:04:42.906  INFO 16796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 17:04:42.906  INFO 16796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 17:04:42.913  INFO 16796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 17:04:42.913  INFO 16796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 17:04:42.958  INFO 16796 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 17:04:42.963  INFO 16796 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 5.446 seconds (JVM running for 7.676)
+2019-03-29 17:05:19.553  INFO 16796 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 17:05:19.557  INFO 16796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 17:05:19.591  INFO 16796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 34 ms
+2019-03-29 17:05:19.637  INFO 16796 --- [http-nio-8080-exec-1] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:05:19.669 ERROR 16796 --- [http-nio-8080-exec-1] c.w.c.n.p.c.LoerReportController         : org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'plantName' in 'class com.whu.cs.nuclear.platform.common.PageParam'
+2019-03-29 17:06:06.305  INFO 6392 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 6392 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 17:06:06.412  INFO 6392 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 17:06:06.541  INFO 6392 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35083305: startup date [Fri Mar 29 17:06:06 CST 2019]; root of context hierarchy
+2019-03-29 17:06:09.173  INFO 6392 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 17:06:09.218  INFO 6392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 17:06:09.218  INFO 6392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 17:06:09.407  INFO 6392 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 17:06:09.409  INFO 6392 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2872 ms
+2019-03-29 17:06:09.734  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 17:06:09.736  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 17:06:09.742  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 17:06:09.742  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 17:06:09.744  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 17:06:09.744  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 17:06:09.744  INFO 6392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 17:06:09.875  INFO 6392 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 17:06:10.802  INFO 6392 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 17:06:10.966  WARN 6392 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loerReportServiceImpl': Unsatisfied dependency expressed through field 'loerReportMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loerReportMapper' defined in file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\com\whu\cs\nuclear\platform\mapper\LoerReportMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+2019-03-29 17:06:10.975  INFO 6392 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-03-29 17:06:10.979  INFO 6392 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-03-29 17:06:10.999  INFO 6392 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-03-29 17:06:11.019 ERROR 6392 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loerReportServiceImpl': Unsatisfied dependency expressed through field 'loerReportMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loerReportMapper' defined in file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\com\whu\cs\nuclear\platform\mapper\LoerReportMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1269) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:124) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at com.whu.cs.nuclear.platform.NuclearSecurityInfoPlatformApplication.main(NuclearSecurityInfoPlatformApplication.java:12) [classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loerReportMapper' defined in file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\com\whu\cs\nuclear\platform\mapper\LoerReportMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1254) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1178) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1072) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1347) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	... 30 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	... 42 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:160) ~[mybatis-spring-boot-autoconfigure-1.3.3.jar:1.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$171d5e6.CGLIB$sqlSessionFactory$2(<generated>) ~[mybatis-spring-boot-autoconfigure-1.3.3.jar:1.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$171d5e6$$FastClassBySpringCGLIB$$4daaf5df.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-1.3.3.jar:1.3.3]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$171d5e6.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-1.3.3.jar:1.3.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	... 43 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 820; columnNumber: 7; 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:259) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:125) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.<init>(XMLMapperBuilder.java:78) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:520) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 56 common frames omitted
+Caused by: org.xml.sax.SAXParseException: 元素类型 "if" 必须由匹配的结束标记 "</if>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_131]
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339) ~[na:1.8.0_131]
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:257) ~[mybatis-3.4.6.jar:3.4.6]
+	... 59 common frames omitted
+
+2019-03-29 17:06:42.935  INFO 11524 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 11524 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 17:06:42.955  INFO 11524 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 17:06:43.207  INFO 11524 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2663e964: startup date [Fri Mar 29 17:06:43 CST 2019]; root of context hierarchy
+2019-03-29 17:06:46.536  INFO 11524 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 17:06:46.589  INFO 11524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 17:06:46.590  INFO 11524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 17:06:46.799  INFO 11524 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 17:06:46.800  INFO 11524 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3599 ms
+2019-03-29 17:06:47.198  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 17:06:47.200  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 17:06:47.206  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 17:06:47.206  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 17:06:47.207  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 17:06:47.208  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 17:06:47.208  INFO 11524 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 17:06:47.355  INFO 11524 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 17:06:48.429  INFO 11524 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 17:06:49.757  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2663e964: startup date [Fri Mar 29 17:06:43 CST 2019]; root of context hierarchy
+2019-03-29 17:06:49.844  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 17:06:49.846  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam)
+2019-03-29 17:06:49.848  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 17:06:49.850  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 17:06:49.850  INFO 11524 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 17:06:49.894  INFO 11524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:06:49.897  INFO 11524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:06:49.950  INFO 11524 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:06:50.373  INFO 11524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 17:06:50.374  INFO 11524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 17:06:50.376  INFO 11524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 17:06:50.381  INFO 11524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 17:06:50.382  INFO 11524 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 17:06:50.433  INFO 11524 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 17:06:50.441  INFO 11524 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 8.747 seconds (JVM running for 11.504)
+2019-03-29 17:07:36.163  INFO 11524 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 17:07:36.164  INFO 11524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 17:07:36.204  INFO 11524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
+2019-03-29 17:07:36.265  INFO 11524 --- [http-nio-8080-exec-1] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:08:29.246  INFO 11524 --- [http-nio-8080-exec-2] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:08:41.792  INFO 11524 --- [http-nio-8080-exec-3] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:09:27.820  INFO 11524 --- [http-nio-8080-exec-4] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:09:32.161  INFO 11524 --- [http-nio-8080-exec-6] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:12:46.011  INFO 11524 --- [http-nio-8080-exec-5] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:15:04.868  INFO 11524 --- [http-nio-8080-exec-10] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 17:15:43.151  INFO 15288 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 15288 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 17:15:43.170  INFO 15288 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 17:15:43.307  INFO 15288 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e25b0b: startup date [Fri Mar 29 17:15:43 CST 2019]; root of context hierarchy
+2019-03-29 17:15:47.031  INFO 15288 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 17:15:47.077  INFO 15288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 17:15:47.077  INFO 15288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 17:15:47.321  INFO 15288 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 17:15:47.322  INFO 15288 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4020 ms
+2019-03-29 17:15:47.779  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 17:15:47.781  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 17:15:47.786  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 17:15:47.787  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 17:15:47.788  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 17:15:47.788  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 17:15:47.789  INFO 15288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 17:15:47.938  INFO 15288 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 17:15:49.000  INFO 15288 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 17:15:50.086  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e25b0b: startup date [Fri Mar 29 17:15:43 CST 2019]; root of context hierarchy
+2019-03-29 17:15:50.179  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 17:15:50.181  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 17:15:50.182  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam,java.lang.String)
+2019-03-29 17:15:50.184  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 17:15:50.185  INFO 15288 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 17:15:50.238  INFO 15288 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:15:50.240  INFO 15288 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:15:50.290  INFO 15288 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 17:15:50.739  INFO 15288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 17:15:50.741  INFO 15288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 17:15:50.741  INFO 15288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 17:15:50.747  INFO 15288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 17:15:50.747  INFO 15288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 17:15:50.798  INFO 15288 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 17:15:50.807  INFO 15288 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 8.505 seconds (JVM running for 11.955)
+2019-03-29 17:16:16.977  INFO 15288 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 17:16:16.979  INFO 15288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 17:16:17.036  INFO 15288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 56 ms
+2019-03-29 17:16:27.931  INFO 15288 --- [http-nio-8080-exec-2] c.w.c.n.p.s.impl.LoerReportServiceImpl   : the page param is null
+2019-03-29 18:41:01.435  INFO 752 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 752 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 18:41:01.442  INFO 752 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 18:41:01.558  INFO 752 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e25b0b: startup date [Fri Mar 29 18:41:01 CST 2019]; root of context hierarchy
+2019-03-29 18:41:03.799  INFO 752 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 18:41:03.857  INFO 752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 18:41:03.857  INFO 752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 18:41:04.022  INFO 752 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 18:41:04.023  INFO 752 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2470 ms
+2019-03-29 18:41:04.320  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 18:41:04.321  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 18:41:04.326  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 18:41:04.327  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 18:41:04.328  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 18:41:04.328  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 18:41:04.328  INFO 752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 18:41:04.439  INFO 752 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 18:41:05.293  INFO 752 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 18:41:06.259  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e25b0b: startup date [Fri Mar 29 18:41:01 CST 2019]; root of context hierarchy
+2019-03-29 18:41:06.345  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 18:41:06.348  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam)
+2019-03-29 18:41:06.349  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 18:41:06.351  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 18:41:06.352  INFO 752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 18:41:06.398  INFO 752 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:41:06.399  INFO 752 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:41:06.449  INFO 752 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:41:06.887  INFO 752 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 18:41:06.889  INFO 752 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 18:41:06.889  INFO 752 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 18:41:06.895  INFO 752 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 18:41:06.896  INFO 752 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 18:41:06.943  INFO 752 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 18:41:06.949  INFO 752 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 6.227 seconds (JVM running for 8.532)
+2019-03-29 18:41:32.791  INFO 752 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 18:41:32.792  INFO 752 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 18:41:32.867  INFO 752 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 75 ms
+2019-03-29 18:41:49.203  INFO 752 --- [http-nio-8080-exec-2] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-03-29 18:41:49.357 ERROR 752 --- [http-nio-8080-exec-2] c.w.c.n.p.c.LoerReportController         : org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'plantCode' in 'where clause'
+### The error may exist in file [C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes\mapper\LoerReportMapper.xml]
+### The error may involve com.whu.cs.nuclear.platform.mapper.LoerReportMapper.selectLoerReportByAdditions-Inline
+### The error occurred while setting parameters
+### SQL: select           id, loer_no, plant_code, plant_name, unit_code, uniform_unit, report_year, report_serial,      en_no, en_date, en_serial, ines_level, subject, event_begin, event_end, reporter_date,      person_shine, env_pollute, report_rule, unit_state, radio_effect, wano_report_rule,      wano_event_result, wano_state, wano_activity, wano_direct_cause, wano_root_cause,      wano_factor, wano_system, wano_equipment, wano_team, event_property, not_plan_stop         from loer_report      WHERE  plantCode = ?      limit ?,?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'plantCode' in 'where clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'plantCode' in 'where clause'
+2019-03-29 18:44:57.333  INFO 11936 --- [main] p.NuclearSecurityInfoPlatformApplication : Starting NuclearSecurityInfoPlatformApplication on DESKTOP-EJPHDQ7 with PID 11936 (C:\Users\14617\Desktop\nuclear-security-info-platform\target\classes started by 14617 in C:\Users\14617\Desktop\nuclear-security-info-platform)
+2019-03-29 18:44:57.338  INFO 11936 --- [main] p.NuclearSecurityInfoPlatformApplication : No active profile set, falling back to default profiles: default
+2019-03-29 18:44:57.624  INFO 11936 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@44be0077: startup date [Fri Mar 29 18:44:57 CST 2019]; root of context hierarchy
+2019-03-29 18:45:00.352  INFO 11936 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-03-29 18:45:00.428  INFO 11936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-29 18:45:00.428  INFO 11936 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-03-29 18:45:00.657  INFO 11936 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring embedded WebApplicationContext
+2019-03-29 18:45:00.657  INFO 11936 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3061 ms
+2019-03-29 18:45:01.053  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-29 18:45:01.056  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2019-03-29 18:45:01.067  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-29 18:45:01.068  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-29 18:45:01.070  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-29 18:45:01.071  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-29 18:45:01.071  INFO 11936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-29 18:45:01.245  INFO 11936 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-03-29 18:45:02.498  INFO 11936 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-29 18:45:03.735  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@44be0077: startup date [Fri Mar 29 18:44:57 CST 2019]; root of context hierarchy
+2019-03-29 18:45:03.875  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report/{id}],methods=[GET]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getLoerReportById(java.lang.Long)
+2019-03-29 18:45:03.878  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/reports]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.getReportsByAdditions(com.whu.cs.nuclear.platform.common.PageParam)
+2019-03-29 18:45:03.880  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loer/report],methods=[POST]}" onto public com.whu.cs.nuclear.platform.common.AjaxResult com.whu.cs.nuclear.platform.controller.LoerReportController.addLoerReport(com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs)
+2019-03-29 18:45:03.883  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-29 18:45:03.886  INFO 11936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-29 18:45:03.954  INFO 11936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:45:03.956  INFO 11936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:45:04.037  INFO 11936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-29 18:45:04.643  INFO 11936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-29 18:45:04.645  INFO 11936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-29 18:45:04.646  INFO 11936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-29 18:45:04.653  INFO 11936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-29 18:45:04.654  INFO 11936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-29 18:45:04.717  INFO 11936 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-03-29 18:45:04.726  INFO 11936 --- [main] p.NuclearSecurityInfoPlatformApplication : Started NuclearSecurityInfoPlatformApplication in 8.472 seconds (JVM running for 12.045)
+2019-03-29 18:45:42.668  INFO 11936 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/nuclear]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-29 18:45:42.668  INFO 11936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-29 18:45:42.702  INFO 11936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 34 ms

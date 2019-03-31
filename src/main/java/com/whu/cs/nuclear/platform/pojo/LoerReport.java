@@ -1,6 +1,8 @@
 package com.whu.cs.nuclear.platform.pojo;
 
 public class LoerReport {
+    private Long id;
+
     private String loerNo;
 
     private String plantCode;
@@ -64,6 +66,14 @@ public class LoerReport {
     private String eventProperty;
 
     private String notPlanStop;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getLoerNo() {
         return loerNo;

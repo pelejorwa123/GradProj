@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.whu.cs.nuclear.platform.mapper.LoerReportMapper">
   <resultMap id="BaseResultMap" type="com.whu.cs.nuclear.platform.pojo.LoerReport">
+    <id column="id" jdbcType="BIGINT" property="id" />
     <result column="loer_no" jdbcType="VARCHAR" property="loerNo" />
     <result column="plant_code" jdbcType="VARCHAR" property="plantCode" />
     <result column="plant_name" jdbcType="VARCHAR" property="plantName" />
@@ -99,7 +100,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    loer_no, plant_code, plant_name, unit_code, uniform_unit, report_year, report_serial, 
+    id, loer_no, plant_code, plant_name, unit_code, uniform_unit, report_year, report_serial, 
     en_no, en_date, en_serial, ines_level, subject, event_begin, event_end, reporter_date, 
     person_shine, env_pollute, report_rule, unit_state, radio_effect, wano_report_rule, 
     wano_event_result, wano_state, wano_activity, wano_direct_cause, wano_root_cause, 
@@ -138,6 +139,18 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from loer_report
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from loer_report
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
   <delete id="deleteByExample" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportExample">
     delete from loer_report
     <if test="_parameter != null">
@@ -145,34 +158,39 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs">
-    insert into loer_report (loer_no, plant_code, plant_name, 
-      unit_code, uniform_unit, report_year, 
-      report_serial, en_no, en_date, 
-      en_serial, ines_level, subject, 
-      event_begin, event_end, reporter_date, 
-      person_shine, env_pollute, report_rule, 
-      unit_state, radio_effect, wano_report_rule, 
-      wano_event_result, wano_state, wano_activity, 
-      wano_direct_cause, wano_root_cause, wano_factor, 
-      wano_system, wano_equipment, wano_team, 
-      event_property, not_plan_stop, start_event, 
-      rule_remark, state_remark)
-    values (#{loerNo,jdbcType=VARCHAR}, #{plantCode,jdbcType=VARCHAR}, #{plantName,jdbcType=VARCHAR}, 
-      #{unitCode,jdbcType=VARCHAR}, #{uniformUnit,jdbcType=VARCHAR}, #{reportYear,jdbcType=VARCHAR}, 
-      #{reportSerial,jdbcType=VARCHAR}, #{enNo,jdbcType=VARCHAR}, #{enDate,jdbcType=VARCHAR}, 
-      #{enSerial,jdbcType=VARCHAR}, #{inesLevel,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, 
-      #{eventBegin,jdbcType=VARCHAR}, #{eventEnd,jdbcType=VARCHAR}, #{reporterDate,jdbcType=VARCHAR}, 
-      #{personShine,jdbcType=VARCHAR}, #{envPollute,jdbcType=VARCHAR}, #{reportRule,jdbcType=VARCHAR}, 
-      #{unitState,jdbcType=VARCHAR}, #{radioEffect,jdbcType=VARCHAR}, #{wanoReportRule,jdbcType=VARCHAR}, 
-      #{wanoEventResult,jdbcType=VARCHAR}, #{wanoState,jdbcType=VARCHAR}, #{wanoActivity,jdbcType=VARCHAR}, 
-      #{wanoDirectCause,jdbcType=VARCHAR}, #{wanoRootCause,jdbcType=VARCHAR}, #{wanoFactor,jdbcType=VARCHAR}, 
-      #{wanoSystem,jdbcType=VARCHAR}, #{wanoEquipment,jdbcType=VARCHAR}, #{wanoTeam,jdbcType=VARCHAR}, 
-      #{eventProperty,jdbcType=VARCHAR}, #{notPlanStop,jdbcType=VARCHAR}, #{startEvent,jdbcType=LONGVARCHAR}, 
-      #{ruleRemark,jdbcType=LONGVARCHAR}, #{stateRemark,jdbcType=LONGVARCHAR})
+    insert into loer_report (id, loer_no, plant_code, 
+      plant_name, unit_code, uniform_unit, 
+      report_year, report_serial, en_no, 
+      en_date, en_serial, ines_level, 
+      subject, event_begin, event_end, 
+      reporter_date, person_shine, env_pollute, 
+      report_rule, unit_state, radio_effect, 
+      wano_report_rule, wano_event_result, wano_state, 
+      wano_activity, wano_direct_cause, wano_root_cause, 
+      wano_factor, wano_system, wano_equipment, 
+      wano_team, event_property, not_plan_stop, 
+      start_event, rule_remark, state_remark
+      )
+    values (#{id,jdbcType=BIGINT}, #{loerNo,jdbcType=VARCHAR}, #{plantCode,jdbcType=VARCHAR}, 
+      #{plantName,jdbcType=VARCHAR}, #{unitCode,jdbcType=VARCHAR}, #{uniformUnit,jdbcType=VARCHAR}, 
+      #{reportYear,jdbcType=VARCHAR}, #{reportSerial,jdbcType=VARCHAR}, #{enNo,jdbcType=VARCHAR}, 
+      #{enDate,jdbcType=VARCHAR}, #{enSerial,jdbcType=VARCHAR}, #{inesLevel,jdbcType=VARCHAR}, 
+      #{subject,jdbcType=VARCHAR}, #{eventBegin,jdbcType=VARCHAR}, #{eventEnd,jdbcType=VARCHAR}, 
+      #{reporterDate,jdbcType=VARCHAR}, #{personShine,jdbcType=VARCHAR}, #{envPollute,jdbcType=VARCHAR}, 
+      #{reportRule,jdbcType=VARCHAR}, #{unitState,jdbcType=VARCHAR}, #{radioEffect,jdbcType=VARCHAR}, 
+      #{wanoReportRule,jdbcType=VARCHAR}, #{wanoEventResult,jdbcType=VARCHAR}, #{wanoState,jdbcType=VARCHAR}, 
+      #{wanoActivity,jdbcType=VARCHAR}, #{wanoDirectCause,jdbcType=VARCHAR}, #{wanoRootCause,jdbcType=VARCHAR}, 
+      #{wanoFactor,jdbcType=VARCHAR}, #{wanoSystem,jdbcType=VARCHAR}, #{wanoEquipment,jdbcType=VARCHAR}, 
+      #{wanoTeam,jdbcType=VARCHAR}, #{eventProperty,jdbcType=VARCHAR}, #{notPlanStop,jdbcType=VARCHAR}, 
+      #{startEvent,jdbcType=LONGVARCHAR}, #{ruleRemark,jdbcType=LONGVARCHAR}, #{stateRemark,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs">
     insert into loer_report
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="loerNo != null">
         loer_no,
       </if>
@@ -280,6 +298,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
       <if test="loerNo != null">
         #{loerNo,jdbcType=VARCHAR},
       </if>
@@ -396,6 +417,9 @@
   <update id="updateByExampleSelective" parameterType="map">
     update loer_report
     <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
       <if test="record.loerNo != null">
         loer_no = #{record.loerNo,jdbcType=VARCHAR},
       </if>
@@ -508,7 +532,8 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update loer_report
-    set loer_no = #{record.loerNo,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=BIGINT},
+      loer_no = #{record.loerNo,jdbcType=VARCHAR},
       plant_code = #{record.plantCode,jdbcType=VARCHAR},
       plant_name = #{record.plantName,jdbcType=VARCHAR},
       unit_code = #{record.unitCode,jdbcType=VARCHAR},
@@ -549,7 +574,8 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update loer_report
-    set loer_no = #{record.loerNo,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=BIGINT},
+      loer_no = #{record.loerNo,jdbcType=VARCHAR},
       plant_code = #{record.plantCode,jdbcType=VARCHAR},
       plant_name = #{record.plantName,jdbcType=VARCHAR},
       unit_code = #{record.unitCode,jdbcType=VARCHAR},
@@ -585,4 +611,438 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs">
+    update loer_report
+    <set>
+      <if test="loerNo != null">
+        loer_no = #{loerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="plantCode != null">
+        plant_code = #{plantCode,jdbcType=VARCHAR},
+      </if>
+      <if test="plantName != null">
+        plant_name = #{plantName,jdbcType=VARCHAR},
+      </if>
+      <if test="unitCode != null">
+        unit_code = #{unitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniformUnit != null">
+        uniform_unit = #{uniformUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="reportYear != null">
+        report_year = #{reportYear,jdbcType=VARCHAR},
+      </if>
+      <if test="reportSerial != null">
+        report_serial = #{reportSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="enNo != null">
+        en_no = #{enNo,jdbcType=VARCHAR},
+      </if>
+      <if test="enDate != null">
+        en_date = #{enDate,jdbcType=VARCHAR},
+      </if>
+      <if test="enSerial != null">
+        en_serial = #{enSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="inesLevel != null">
+        ines_level = #{inesLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="eventBegin != null">
+        event_begin = #{eventBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="eventEnd != null">
+        event_end = #{eventEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="reporterDate != null">
+        reporter_date = #{reporterDate,jdbcType=VARCHAR},
+      </if>
+      <if test="personShine != null">
+        person_shine = #{personShine,jdbcType=VARCHAR},
+      </if>
+      <if test="envPollute != null">
+        env_pollute = #{envPollute,jdbcType=VARCHAR},
+      </if>
+      <if test="reportRule != null">
+        report_rule = #{reportRule,jdbcType=VARCHAR},
+      </if>
+      <if test="unitState != null">
+        unit_state = #{unitState,jdbcType=VARCHAR},
+      </if>
+      <if test="radioEffect != null">
+        radio_effect = #{radioEffect,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoReportRule != null">
+        wano_report_rule = #{wanoReportRule,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoEventResult != null">
+        wano_event_result = #{wanoEventResult,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoState != null">
+        wano_state = #{wanoState,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoActivity != null">
+        wano_activity = #{wanoActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoDirectCause != null">
+        wano_direct_cause = #{wanoDirectCause,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoRootCause != null">
+        wano_root_cause = #{wanoRootCause,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoFactor != null">
+        wano_factor = #{wanoFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoSystem != null">
+        wano_system = #{wanoSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoEquipment != null">
+        wano_equipment = #{wanoEquipment,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoTeam != null">
+        wano_team = #{wanoTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="eventProperty != null">
+        event_property = #{eventProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="notPlanStop != null">
+        not_plan_stop = #{notPlanStop,jdbcType=VARCHAR},
+      </if>
+      <if test="startEvent != null">
+        start_event = #{startEvent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="ruleRemark != null">
+        rule_remark = #{ruleRemark,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="stateRemark != null">
+        state_remark = #{stateRemark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs">
+    update loer_report
+    set loer_no = #{loerNo,jdbcType=VARCHAR},
+      plant_code = #{plantCode,jdbcType=VARCHAR},
+      plant_name = #{plantName,jdbcType=VARCHAR},
+      unit_code = #{unitCode,jdbcType=VARCHAR},
+      uniform_unit = #{uniformUnit,jdbcType=VARCHAR},
+      report_year = #{reportYear,jdbcType=VARCHAR},
+      report_serial = #{reportSerial,jdbcType=VARCHAR},
+      en_no = #{enNo,jdbcType=VARCHAR},
+      en_date = #{enDate,jdbcType=VARCHAR},
+      en_serial = #{enSerial,jdbcType=VARCHAR},
+      ines_level = #{inesLevel,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      event_begin = #{eventBegin,jdbcType=VARCHAR},
+      event_end = #{eventEnd,jdbcType=VARCHAR},
+      reporter_date = #{reporterDate,jdbcType=VARCHAR},
+      person_shine = #{personShine,jdbcType=VARCHAR},
+      env_pollute = #{envPollute,jdbcType=VARCHAR},
+      report_rule = #{reportRule,jdbcType=VARCHAR},
+      unit_state = #{unitState,jdbcType=VARCHAR},
+      radio_effect = #{radioEffect,jdbcType=VARCHAR},
+      wano_report_rule = #{wanoReportRule,jdbcType=VARCHAR},
+      wano_event_result = #{wanoEventResult,jdbcType=VARCHAR},
+      wano_state = #{wanoState,jdbcType=VARCHAR},
+      wano_activity = #{wanoActivity,jdbcType=VARCHAR},
+      wano_direct_cause = #{wanoDirectCause,jdbcType=VARCHAR},
+      wano_root_cause = #{wanoRootCause,jdbcType=VARCHAR},
+      wano_factor = #{wanoFactor,jdbcType=VARCHAR},
+      wano_system = #{wanoSystem,jdbcType=VARCHAR},
+      wano_equipment = #{wanoEquipment,jdbcType=VARCHAR},
+      wano_team = #{wanoTeam,jdbcType=VARCHAR},
+      event_property = #{eventProperty,jdbcType=VARCHAR},
+      not_plan_stop = #{notPlanStop,jdbcType=VARCHAR},
+      start_event = #{startEvent,jdbcType=LONGVARCHAR},
+      rule_remark = #{ruleRemark,jdbcType=LONGVARCHAR},
+      state_remark = #{stateRemark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReport">
+    update loer_report
+    set loer_no = #{loerNo,jdbcType=VARCHAR},
+      plant_code = #{plantCode,jdbcType=VARCHAR},
+      plant_name = #{plantName,jdbcType=VARCHAR},
+      unit_code = #{unitCode,jdbcType=VARCHAR},
+      uniform_unit = #{uniformUnit,jdbcType=VARCHAR},
+      report_year = #{reportYear,jdbcType=VARCHAR},
+      report_serial = #{reportSerial,jdbcType=VARCHAR},
+      en_no = #{enNo,jdbcType=VARCHAR},
+      en_date = #{enDate,jdbcType=VARCHAR},
+      en_serial = #{enSerial,jdbcType=VARCHAR},
+      ines_level = #{inesLevel,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      event_begin = #{eventBegin,jdbcType=VARCHAR},
+      event_end = #{eventEnd,jdbcType=VARCHAR},
+      reporter_date = #{reporterDate,jdbcType=VARCHAR},
+      person_shine = #{personShine,jdbcType=VARCHAR},
+      env_pollute = #{envPollute,jdbcType=VARCHAR},
+      report_rule = #{reportRule,jdbcType=VARCHAR},
+      unit_state = #{unitState,jdbcType=VARCHAR},
+      radio_effect = #{radioEffect,jdbcType=VARCHAR},
+      wano_report_rule = #{wanoReportRule,jdbcType=VARCHAR},
+      wano_event_result = #{wanoEventResult,jdbcType=VARCHAR},
+      wano_state = #{wanoState,jdbcType=VARCHAR},
+      wano_activity = #{wanoActivity,jdbcType=VARCHAR},
+      wano_direct_cause = #{wanoDirectCause,jdbcType=VARCHAR},
+      wano_root_cause = #{wanoRootCause,jdbcType=VARCHAR},
+      wano_factor = #{wanoFactor,jdbcType=VARCHAR},
+      wano_system = #{wanoSystem,jdbcType=VARCHAR},
+      wano_equipment = #{wanoEquipment,jdbcType=VARCHAR},
+      wano_team = #{wanoTeam,jdbcType=VARCHAR},
+      event_property = #{eventProperty,jdbcType=VARCHAR},
+      not_plan_stop = #{notPlanStop,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectLoerReportByAdditions" parameterType="com.whu.cs.nuclear.platform.common.PageParam" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from loer_report
+    <where>
+      <if test="plantCode != null">
+        and plant_code = #{plantCode,jdbcType=VARCHAR}
+      </if>
+      <if test="unitCode != null">
+        and unit_code = #{unitCode,jdbcType=VARCHAR}
+      </if>
+      <if test="uniformUnit != null">
+        and uniform_unit = #{uniformUnit,jdbcType=VARCHAR}
+      </if>
+      <if test="reportYear != null">
+        and report_year = #{reportYear,jdbcType=VARCHAR}
+      </if>
+      <if test="reportSerial != null">
+        and report_serial = #{reportSerial,jdbcType=VARCHAR}
+      </if>
+    </where>
+    limit #{startRows},#{pageSize}
+  </select>
+
+  <insert id="insertReport" keyProperty="id" useGeneratedKeys="true" parameterType="com.whu.cs.nuclear.platform.pojo.LoerReportWithBLOBs">
+    insert into loer_report
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loerNo != null">
+        loer_no,
+      </if>
+      <if test="plantCode != null">
+        plant_code,
+      </if>
+      <if test="plantName != null">
+        plant_name,
+      </if>
+      <if test="unitCode != null">
+        unit_code,
+      </if>
+      <if test="uniformUnit != null">
+        uniform_unit,
+      </if>
+      <if test="reportYear != null">
+        report_year,
+      </if>
+      <if test="reportSerial != null">
+        report_serial,
+      </if>
+      <if test="enNo != null">
+        en_no,
+      </if>
+      <if test="enDate != null">
+        en_date,
+      </if>
+      <if test="enSerial != null">
+        en_serial,
+      </if>
+      <if test="inesLevel != null">
+        ines_level,
+      </if>
+      <if test="subject != null">
+        subject,
+      </if>
+      <if test="eventBegin != null">
+        event_begin,
+      </if>
+      <if test="eventEnd != null">
+        event_end,
+      </if>
+      <if test="reporterDate != null">
+        reporter_date,
+      </if>
+      <if test="personShine != null">
+        person_shine,
+      </if>
+      <if test="envPollute != null">
+        env_pollute,
+      </if>
+      <if test="reportRule != null">
+        report_rule,
+      </if>
+      <if test="unitState != null">
+        unit_state,
+      </if>
+      <if test="radioEffect != null">
+        radio_effect,
+      </if>
+      <if test="wanoReportRule != null">
+        wano_report_rule,
+      </if>
+      <if test="wanoEventResult != null">
+        wano_event_result,
+      </if>
+      <if test="wanoState != null">
+        wano_state,
+      </if>
+      <if test="wanoActivity != null">
+        wano_activity,
+      </if>
+      <if test="wanoDirectCause != null">
+        wano_direct_cause,
+      </if>
+      <if test="wanoRootCause != null">
+        wano_root_cause,
+      </if>
+      <if test="wanoFactor != null">
+        wano_factor,
+      </if>
+      <if test="wanoSystem != null">
+        wano_system,
+      </if>
+      <if test="wanoEquipment != null">
+        wano_equipment,
+      </if>
+      <if test="wanoTeam != null">
+        wano_team,
+      </if>
+      <if test="eventProperty != null">
+        event_property,
+      </if>
+      <if test="notPlanStop != null">
+        not_plan_stop,
+      </if>
+      <if test="startEvent != null">
+        start_event,
+      </if>
+      <if test="ruleRemark != null">
+        rule_remark,
+      </if>
+      <if test="stateRemark != null">
+        state_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="loerNo != null">
+        #{loerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="plantCode != null">
+        #{plantCode,jdbcType=VARCHAR},
+      </if>
+      <if test="plantName != null">
+        #{plantName,jdbcType=VARCHAR},
+      </if>
+      <if test="unitCode != null">
+        #{unitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniformUnit != null">
+        #{uniformUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="reportYear != null">
+        #{reportYear,jdbcType=VARCHAR},
+      </if>
+      <if test="reportSerial != null">
+        #{reportSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="enNo != null">
+        #{enNo,jdbcType=VARCHAR},
+      </if>
+      <if test="enDate != null">
+        #{enDate,jdbcType=VARCHAR},
+      </if>
+      <if test="enSerial != null">
+        #{enSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="inesLevel != null">
+        #{inesLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="eventBegin != null">
+        #{eventBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="eventEnd != null">
+        #{eventEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="reporterDate != null">
+        #{reporterDate,jdbcType=VARCHAR},
+      </if>
+      <if test="personShine != null">
+        #{personShine,jdbcType=VARCHAR},
+      </if>
+      <if test="envPollute != null">
+        #{envPollute,jdbcType=VARCHAR},
+      </if>
+      <if test="reportRule != null">
+        #{reportRule,jdbcType=VARCHAR},
+      </if>
+      <if test="unitState != null">
+        #{unitState,jdbcType=VARCHAR},
+      </if>
+      <if test="radioEffect != null">
+        #{radioEffect,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoReportRule != null">
+        #{wanoReportRule,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoEventResult != null">
+        #{wanoEventResult,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoState != null">
+        #{wanoState,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoActivity != null">
+        #{wanoActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoDirectCause != null">
+        #{wanoDirectCause,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoRootCause != null">
+        #{wanoRootCause,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoFactor != null">
+        #{wanoFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoSystem != null">
+        #{wanoSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoEquipment != null">
+        #{wanoEquipment,jdbcType=VARCHAR},
+      </if>
+      <if test="wanoTeam != null">
+        #{wanoTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="eventProperty != null">
+        #{eventProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="notPlanStop != null">
+        #{notPlanStop,jdbcType=VARCHAR},
+      </if>
+      <if test="startEvent != null">
+        #{startEvent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="ruleRemark != null">
+        #{ruleRemark,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="stateRemark != null">
+        #{stateRemark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
 </mapper>
